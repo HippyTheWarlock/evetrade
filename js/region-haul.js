@@ -54,17 +54,16 @@ Region.prototype.className = function() {
  * Begins the process for finding route information and displaying the best trades for the route.
  */
 Region.prototype.startRoute = function() {
-    var regionId = (this.startLocation.id);
+    var regionId = parseInt(this.startLocation.id);
 
     this.getSellOrders(regionId, this.buyOrders);
 
-    regionId = (this.endLocation.id);
+    regionId = parseInt(this.endLocations.id);
 
     this.getBuyOrders(regionId, this.sellOrders);
 
     $("#selection").hide();
-    };
-
+};
 
 /**
  * Calculates the progress using a logarithmic function
